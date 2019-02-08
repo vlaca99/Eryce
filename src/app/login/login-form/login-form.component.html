@@ -1,0 +1,61 @@
+<div id="login-form">
+  <div class="login-sidebar">
+    <button class="login active" [ngClass]="{'active':showLogin}" (click)="showLoginForm()">
+      <i class="far fa-arrow-alt-circle-up"></i>
+    </button>
+    <button class="register" [ngClass]="{'active':showRegister}" (click)="showRegisterForm(); registerFormHeight()">
+      <i class="far fa-arrow-alt-circle-right"></i>
+    </button>
+  </div>
+  <div class="login-main" *ngIf='showLogin'>
+    <div class="login-header">{{ loginHeader }}</div>
+    <form action="" method="post" novalidate>
+      <div class="form-group">
+        <label for="email">{{ emailLabel }}</label>
+        <input [(ngModel)]="user.email" type="email" name="email" id="email" class="material-input">
+      </div>
+      <div class="form-group">
+        <label for="">{{ passwordLabel }}</label>
+        <input [(ngModel)]="user.password" type="password" name="password" id="password" class="material-input">
+      </div>
+      <div class="forgot-password">
+        <div class="checkbox">
+          <label class="checkbox-container">{{ checkboxLabel }}
+            <input type="checkbox" name="rememberMe" id="remember-me">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <a href="#">{{ forgotPassword }}</a>
+      </div>
+      <a [routerLink]="['/profile']" class="btn-primary">{{ loginBtnText }}</a>
+      <div class="or"></div>
+      <a href="#" class="btn-facebook">
+        <i class="fab fa-facebook-f icon"></i>
+        {{ facebookBtnText }}
+      </a>
+      <a href="#" class="btn-twitter">
+        <i class="fab fa-twitter icon"></i>
+        {{ twitterBtnText }}
+      </a>
+      <p [innerHTML]="registerInfo"></p>
+    </form>
+  </div>
+  <div class="register-main" *ngIf="showRegister">
+    <div class="login-header">{{ registerHeader }}</div>
+    <form action="" method="post" novalidate>
+      <div class="form-group">
+        <label for="name">{{ nameLabel }}</label>
+        <input [(ngModel)]="user.name" type="name" name="text" id="name" class="material-input">
+      </div>
+      <div class="form-group">
+        <label for="email">{{ emailLabel }}</label>
+        <input [(ngModel)]="user.email" type="email" name="email" id="register-email" class="material-input">
+      </div>
+      <div class="form-group">
+        <label for="">{{ passwordLabel }}</label>
+        <input [(ngModel)]="user.password" type="password" name="password" id="register-password" class="material-input">
+      </div>
+      <button type="submit" class="btn-primary">{{ registerBtnText }}</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,205 @@
+<div class="sidebar-item latest-photos">
+  <div class="sidebar-item-header">
+    Latest photos
+    <span>
+      <i class="fas fa-ellipsis-h"></i>
+    </span>
+  </div>
+  <div class="sidebar-item-body">
+    <ul>
+      <li *ngFor="let photo of latestPhotos">
+        <a href="#">
+          <img src="{{ photo.url }}" alt="Latest photo" />
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="sidebar-item blogs">
+  <div class="sidebar-item-header">
+    Blog posts
+    <span>
+      <i class="fas fa-ellipsis-h"></i>
+    </span>
+  </div>
+  <div class="sidebar-item-body">
+    <div class="body-item" *ngFor="let blog of blogPosts">
+      <h4>{{ blog.title }}</h4>
+      <p>{{ blog.description }}</p>
+      <p class="blog-time">
+        {{ blog.time }}
+      </p>
+    </div>
+  </div>
+</div>
+<div class="sidebar-item friends">
+  <div class="sidebar-item-header">
+    Friends (86)
+    <span>
+      <i class="fas fa-ellipsis-h"></i>
+    </span>
+  </div>
+  <div class="sidebar-item-body">
+    <ul>
+      <li *ngFor="let friend of friends">
+        <img src="{{ friend.url }}" alt="Avatar image" />
+      </li>
+      <li class="plus-friends">
+        <div class="bg-primary">+ 74</div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="sidebar-item favourite-pages">
+  <div class="sidebar-item-header">
+    Favourite pages
+    <span>
+      <i class="fas fa-ellipsis-h"></i>
+    </span>
+  </div>
+  <div class="sidebar-item-body">
+    <div class="body-item" *ngFor="let page of favouritePages">
+      <div class="page-info">
+        <img src="{{ page.imgUrl }}" alt="Page photo" />
+        <div class="page-description">
+          <h4>{{ page.title }}</h4>
+          <p>{{ page.description }}</p>
+        </div>
+      </div>
+      <div class="favourite">
+        <i class="far fa-star"></i>
+        <span class="tooltip">Add to your favs</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="sidebar-item poll">
+  <div class="sidebar-item-header">
+    James's poll
+    <span>
+      <i class="fas fa-ellipsis-h"></i>
+    </span>
+  </div>
+  <div class="sidebar-item-body">
+    <div class="body-item">
+      <p>
+        If you had to choose, which actor do you prefer to be the next Darkman?
+      </p>
+      <div class="option">
+        <div class="radio-group">
+          <label class="radio-container"
+            >Thomas Bale
+            <input type="radio" name="actor" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <span class="percent">62%</span>
+      </div>
+      <div class="progress"></div>
+      <div class="number-of-votes">12 friends voted for this</div>
+      <ul>
+        <li>
+          <img src="assets/images/avatar-image-1.jpg" alt="Avatar image" />
+        </li>
+        <li>
+          <img src="assets/images/avatar-image-2.jpg" alt="Avatar image" />
+        </li>
+        <li>
+          <img src="assets/images/avatar-image-3.jpg" alt="Avatar image" />
+        </li>
+        <li>
+          <img src="assets/images/avatar-image-4.jpg" alt="Avatar image" />
+        </li>
+        <li>
+          <img src="assets/images/avatar-image-5.jpg" alt="Avatar image" />
+        </li>
+        <li>
+          <img src="assets/images/avatar-image-6.jpg" alt="Avatar image" />
+        </li>
+        <li>
+          <img src="assets/images/avatar-image-7.jpg" alt="Avatar image" />
+        </li>
+        <li>
+          <img src="assets/images/avatar-image-3.jpg" alt="Avatar image" />
+        </li>
+        <li>
+          <img src="assets/images/avatar-image-5.jpg" alt="Avatar image" />
+        </li>
+        <li class="last">
+          <img src="assets/images/avatar-image-4.jpg" alt="Avatar image" />
+        </li>
+      </ul>
+      <div class="option">
+        <div class="radio-group">
+          <label class="radio-container"
+            >Ben Robertson
+            <input type="radio" name="actor" checked />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <span class="percent">27%</span>
+      </div>
+      <div class="progress option-two"></div>
+      <div class="number-of-votes">7 friends voted for this</div>
+      <ul>
+        <li>
+          <img src="assets/images/avatar-image-1.jpg" alt="Avatar image" />
+        </li>
+        <li>
+          <img src="assets/images/avatar-image-2.jpg" alt="Avatar image" />
+        </li>
+        <li>
+          <img src="assets/images/avatar-image-3.jpg" alt="Avatar image" />
+        </li>
+        <li>
+          <img src="assets/images/avatar-image-4.jpg" alt="Avatar image" />
+        </li>
+        <li>
+          <img src="assets/images/avatar-image-5.jpg" alt="Avatar image" />
+        </li>
+        <li>
+          <img src="assets/images/avatar-image-6.jpg" alt="Avatar image" />
+        </li>
+        <li>
+          <img src="assets/images/avatar-image-7.jpg" alt="Avatar image" />
+        </li>
+      </ul>
+      <div class="option">
+        <div class="radio-group">
+          <label class="radio-container"
+            >Michael Streiton
+            <input type="radio" name="actor" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <span class="percent">11%</span>
+      </div>
+      <div class="progress option-three"></div>
+      <div class="number-of-votes">2 friends voted for this</div>
+      <ul>
+        <li>
+          <img src="assets/images/avatar-image-1.jpg" alt="Avatar image" />
+        </li>
+        <li>
+          <img src="assets/images/avatar-image-2.jpg" alt="Avatar image" />
+        </li>
+        <li>
+          <img src="assets/images/avatar-image-3.jpg" alt="Avatar image" />
+        </li>
+        <li>
+          <img src="assets/images/avatar-image-4.jpg" alt="Avatar image" />
+        </li>
+        <li>
+          <img src="assets/images/avatar-image-5.jpg" alt="Avatar image" />
+        </li>
+        <li>
+          <img src="assets/images/avatar-image-6.jpg" alt="Avatar image" />
+        </li>
+        <li>
+          <img src="assets/images/avatar-image-7.jpg" alt="Avatar image" />
+        </li>
+      </ul>
+      <button class="btn btn-outline">Vote now</button>
+    </div>
+  </div>
+</div>

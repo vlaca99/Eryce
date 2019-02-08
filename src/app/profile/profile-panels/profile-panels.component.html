@@ -1,0 +1,113 @@
+<div class="panel-block" *ngFor="let post of posts">
+  <app-panel userName="{{post.userName}}" time="{{post.time}}">
+    <p *ngIf="post.message" >
+      {{post.message}}
+    </p>
+    <div class="video" *ngIf="post.video">
+      <div class="video-thumbnail">
+        <img src="{{post.video.thumbnailUrl}}" alt="Video thumbnail" />
+        <a href="#" class="play-button">
+          <i class="fas fa-play play-icon"></i>
+        </a>
+      </div>
+      <div class="video-info-section">
+        <a href="#" class="video-title">
+          {{ post.video.videoTitle }}
+        </a>
+        <p class="video-description">
+          {{ post.video.videoDescription }}
+        </p>
+        <a href="#" class="link">{{ post.video.linkText }}</a>
+      </div>
+    </div>
+    <div class="image-post" *ngIf="post.imagePost" >
+      <img src="{{post.imagePost.imageUrl}}" alt="Image post" />
+      <div class="post-comment" *ngIf="post.comment" >
+        <ul>
+          <li class="comment-item">
+            <div class="comment-header">
+              <div class="comment-thumbnail">
+                <img
+                  src="{{ post.comment.avatarUrl }}"
+                  alt="User thumbnail"
+                />
+              </div>
+              <div class="user-info">
+                <p class="name">{{ post.comment.userName }}</p>
+                <p class="time">{{ post.comment.time }}</p>
+              </div>
+            </div>
+            <p class="comment">
+              {{ post.comment.commentText }}
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </app-panel>
+  <div class="reply" *ngIf="post.replyItems" >
+    <ul class="reply-list">
+      <li class="reply-item" *ngFor="let reply of post.replyItems" [ngClass]="reply.childReply ? 'has-replies' : ''">
+        <div class="reply-header">
+          <img
+            src="{{reply.avatarUrl}}"
+            class="thumbnail"
+            alt="Avatar thumbnail"
+          />
+          <div class="user-info">
+            <p class="name">{{reply.name}}</p>
+            <p class="time">{{reply.time}}</p>
+          </div>
+        </div>
+        <div class="reply-body">
+          <p>
+            {{reply.replyText}}
+          </p>
+        </div>
+        <div class="reply-footer">
+          <div class="likes">
+            <i class="far fa-heart like-icon"></i>
+            <span class="ammount">8</span>
+          </div>
+          <a href="#" class="reply-btn">Reply</a>
+        </div>
+        <ul class="reply-children" *ngIf="reply.childReply">
+          <li class="reply-item" *ngFor="let replyChild of reply.childReply" >
+            <div class="reply-header">
+              <img
+                src="{{replyChild.avatarUrl}}"
+                class="thumbnail"
+                alt="User thumbnail"
+              />
+              <div class="user-info">
+                <p class="name">{{ replyChild.name }}</p>
+                <p class="time">{{ replyChild.time }}</p>
+              </div>
+            </div>
+            <div class="reply-body">
+              <p class="comment">
+                {{ replyChild.replyText }}
+              </p>
+            </div>
+            <div class="reply-footer">
+              <div class="likes">
+                <i class="far fa-heart like-icon"></i>
+                <span class="ammount">5</span>
+              </div>
+              <a href="#" class="reply-btn">Reply</a>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <a href="#" class="view-more">View more comments <span>+</span></a>
+    <div class="add-comment">
+      <img
+        src="assets/images/profile-image.jpg"
+        class="thumbnail"
+        alt="Avatar image"
+      />
+      <textarea name="reply-comment" id="reply-comment" rows="5"></textarea>
+    </div>
+  </div>
+</div>

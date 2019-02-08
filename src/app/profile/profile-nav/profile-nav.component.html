@@ -1,0 +1,33 @@
+<nav class="profile-nav">
+  <ul>
+    <li *ngFor="let item of navLeft" >
+      <a href="#" class="nav-item">{{item}}</a>
+    </li>
+  </ul>
+  <ul>
+    <li *ngFor="let item of navRight" >
+      <a href="#" class="nav-item">{{item}}</a>
+    </li>
+    <li>
+      <a href="#" class="nav-item">
+        <i class="fas fa-ellipsis-h"></i>
+      </a>
+    </li>
+  </ul>
+  <div class="profile-avatar">
+    <img src="assets/images/profile-image.jpg" alt="Profile image">
+    <div class="name">{{ user }}</div>
+    <div class="location">{{ location }}</div>
+  </div>
+  <div class="controls">
+    <a href="#" class="bg-blue controls-item">
+      <i class="far fa-smile"></i>
+    </a>
+    <a href="#" class="bg-purple controls-item">
+      <i class="far fa-comments"></i>
+    </a>
+    <a href="#" class="bg-primary controls-item">
+      <i class="fas fa-sliders-h"></i>
+    </a>
+  </div>
+</nav>

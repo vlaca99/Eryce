@@ -1,0 +1,236 @@
+@import '../../../scss/partials/variables';
+@import '../../../scss/partials/mixins';
+
+.sidebar-item {
+  margin-bottom: 20px;
+  background: $white;
+  border-radius: 6px;
+  .sidebar-item-header {
+    @include flexbox;
+    align-items: center;
+    justify-content: space-between;
+    padding: 23px;
+    font-size: 13px;
+    color: $dark-grey;
+    border-bottom: 1px solid $light-grey;
+    font-weight: $weight-bold;
+    text-transform: capitalize;
+    span {
+      color: $grey;
+    }
+  }
+  .sidebar-item-body {
+    padding: 23px;
+    .body-item {
+      padding: 15px 0;
+      h4 {
+        margin-bottom: 5px;
+        font-size: 13px;
+        color: $dark-grey;
+      }
+      p {
+        font-size: 13px;
+        color: $grey;
+      }
+      .btn {
+        font-size: 11px;
+        padding: 10px;
+      }
+      &.social {
+        h4 {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+  &.badges {
+    .sidebar-item-body {
+      @include flexbox;
+      flex-wrap: wrap;
+      align-items: center;;
+      .badge {
+        position: relative;
+        margin: 0 20px 15px 0;
+        border-radius: 50%;
+        span {
+          position: absolute;
+          top: -2px;
+          right: -2px;
+          width: 16px;
+          height: 16px;
+          @include flexbox;
+          align-items: center;
+          justify-content: center;
+          font-size: 10px;
+          color:$white;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  &.playlist {
+    .sidebar-item-body {
+      padding: 13px 0;
+    }
+    ol {
+      counter-reset: list1;
+      list-style: none;
+      li {
+        position: relative;
+        @include flexbox;
+        align-items: center;
+        padding: 10px 23px;
+        &:before {
+        counter-increment: list1;
+        content: counter(list1) " ";
+        color: $grey;
+        margin-right: 10px;
+        font-size: 10px;
+        transition: all .3s ease;
+        }
+        .thumbnail {
+          position: relative;
+          margin-right: 12px;
+          .play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color: $white;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: all .3s ease;
+          }
+        }
+        .song-info {
+          width: 100%;
+          @include flexbox;
+          align-items: center;
+          justify-content: space-between;
+          .song-title {
+            .title {
+              font-size: 12px;
+              color: $dark-grey;
+              font-weight: $weight-bold;
+            }
+            .artist {
+              font-size: 11px;
+              color: $grey;
+            }
+          }
+          .song-duration {
+            font-size: 11px;
+            color: $grey;
+            justify-self: flex-end;
+            .more {
+              display: none;
+              opacity: 0;
+            }
+          }
+        }
+        &:hover {
+          background-color: $light-grey;
+          .thumbnail {
+            .play {
+              opacity: 1;
+            }
+          }
+          .song-duration {
+            .time {
+              display: none;
+            }
+            .more {
+              display: block;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.twitter-feed {
+    .sidebar-item-body {
+      padding: 0;
+      .body-item {
+        padding: 23px;
+        & + .body-item {
+          border-top: 1px solid $light-grey;
+        }
+        .tweet-title {
+          @include flexbox;
+          align-items: center;
+          margin-bottom: 15px;
+          img {
+            margin-right: 12px;
+          }
+          .author {
+            .name {
+              color: $dark-grey;
+              font-weight: $weight-bold;
+            }
+          }
+        }
+        .tweet-text {
+          margin-bottom: 15px;
+          .link {
+            color: $link-color;
+          }
+        }
+      }
+    }
+  }
+  &.videos {
+    .sidebar-item-body {
+      @include flexbox;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+    .body-item {
+      position: relative;
+      img {
+        max-width: 100%;
+        border-radius: 5px;
+      }
+      .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include flexbox;
+        align-items: center;
+        justify-content: center;
+        width: 52px;
+        height: 52px;
+        font-size: 20px;
+        color: $white;
+        border: 4px solid $white;
+        border-radius: 50%;
+        background: rgba($primary-color, .7);
+        transform: translate(-50%, -50%);
+        transition: all .3s ease-in-out;
+      }
+      .video-description {
+        position: absolute;
+        bottom: -15px;
+        left: 15px;
+        color: $white;
+        opacity: 0;
+        transition: all .3s ease-in-out;
+        .video-title {
+          font-size: 12px;
+        }
+        .duration {
+          font-size: 10px;
+        }
+      }
+      &:hover {
+        .play-button {
+          margin-top: -20px;
+        }
+        .video-description {
+          bottom: 25px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

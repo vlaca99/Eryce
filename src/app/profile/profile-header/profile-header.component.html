@@ -1,0 +1,43 @@
+<header class="profile-header">
+  <div class="logo">
+    <a [routerLink]="['/login']">
+      <img src="assets/images/logo.png" alt="Logo">
+    </a>
+  </div>
+  <div class="fixed-header">
+    <div class="search-section">
+      <h2 class="page-name">Profile page</h2>
+      <div class="search-group">
+        <input type="search" name="search" id="search" placeholder="Search here people or pages..">
+        <button>
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+      <span class="find-friends">Find friends</span>
+    </div>
+    <div class="user-section">
+      <div class="user-info">
+        <div class="user-icon friends">
+          <i class="far fa-smile"></i>
+        </div>
+        <div class="user-icon messages">
+          <i class="far fa-comment"></i>
+        </div>
+        <div class="user-icon notifications">
+          <i class="fas fa-bolt"></i>
+          <span class="badge">8</span>
+        </div>
+      </div>
+      <div class="avatar">
+        <img src="assets/images/profile-image.jpg" alt="Profile image">
+        <div class="avatar-info">
+          <p class="name">
+            James Spiegel
+            <span><i class="fas fa-chevron-down"></i></span>
+          </p>
+          <p class="username">Space cowboy</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

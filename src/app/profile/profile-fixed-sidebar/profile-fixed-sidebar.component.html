@@ -1,0 +1,15 @@
+<div class="fixed-sidebar left">
+  <ul>
+    <li *ngFor="let icon of icons" >
+      <i class="fas fa-{{icon}}"></i>
+    </li>
+  </ul>
+</div>
+<div class="fixed-sidebar right">
+  <ul>
+    <li *ngFor="let user of users" >
+      <img src="{{user.url}}" alt="Avatar image">
+      <span class="status {{user.status}}"></span>
+    </li>
+  </ul>
+</div>

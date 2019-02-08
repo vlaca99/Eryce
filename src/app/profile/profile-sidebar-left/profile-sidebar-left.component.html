@@ -1,0 +1,187 @@
+<div class="sidebar-item">
+  <div class="sidebar-item-header">
+    Profile intro
+    <span>
+      <i class="fas fa-ellipsis-h"></i>
+    </span>
+  </div>
+  <div class="sidebar-item-body">
+    <div class="body-item">
+      <h4>Abut Me:</h4>
+      <p>
+        Hi, I’m James, I’m 36 and I work as a Digital Designer for the
+        “Daydreams” Agency in Pier 56
+      </p>
+    </div>
+    <div class="body-item">
+      <h4>Favourite TV shows:</h4>
+      <p>
+        Breaking Good, RedDevil, People of Interest, The Running Dead, Found,
+        American Guy.
+      </p>
+    </div>
+    <div class="body-item">
+      <h4>Favourite music bands / artists:</h4>
+      <p>
+        Iron Maid, DC/AC, Megablow, The Ill, Kung Fighters, System of a Revenge.
+      </p>
+    </div>
+    <div class="body-item social">
+      <h4>Other social networks:</h4>
+      <a href="#" class="btn btn-facebook">
+        <i class="fab fa-facebook-f icon"></i>
+        Facebook
+      </a>
+      <a href="#" class="btn btn-twitter">
+        <i class="fab fa-twitter icon"></i>
+        Twitter
+      </a>
+      <a href="#" class="btn btn-dribble">
+        <i class="fab fa-dribbble icon"></i>
+        Dribble
+      </a>
+    </div>
+  </div>
+</div>
+<div class="sidebar-item badges">
+  <div class="sidebar-item-header">
+    James's badges
+    <span>
+      <i class="fas fa-ellipsis-h"></i>
+    </span>
+  </div>
+  <div class="sidebar-item-body">
+    <div class="badge" *ngFor="let badge of badges">
+      <img src="{{ badge.badgeUrl }}" alt="Badge" />
+      <span *ngIf="badge.ammount" class="{{ badge.bgClass }}">
+        {{badge.ammount}}
+      </span>
+    </div>
+  </div>
+</div>
+<div class="sidebar-item playlist">
+  <div class="sidebar-item-header">
+    My spotify playlist
+    <span>
+      <i class="fas fa-ellipsis-h"></i>
+    </span>
+  </div>
+  <div class="sidebar-item-body">
+    <ol>
+      <li *ngFor="let item of playlist">
+        <div class="thumbnail">
+          <img src="{{ item.imageUrl }}" alt="Spotify image" />
+          <i class="far fa-play-circle play"></i>
+        </div>
+        <div class="song-info">
+          <div class="song-title">
+            <p class="title">{{ item.title }}</p>
+            <p class="artist">{{ item.artist }}</p>
+          </div>
+          <div class="song-duration">
+            <span class="time">{{ item.time }}</span>
+            <i class="fas fa-ellipsis-h more"></i>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</div>
+<div class="sidebar-item twitter-feed">
+  <div class="sidebar-item-header">
+    Twitter feed
+    <span>
+      <i class="fas fa-ellipsis-h"></i>
+    </span>
+  </div>
+  <div class="sidebar-item-body">
+    <div class="body-item">
+      <div class="tweet-title">
+        <img src="assets/images/twitter-avatar.png" alt="Tweeter avatar" />
+        <div class="author">
+          <p class="name">Space Cowboy</p>
+          <p class="tweet-name">@james_spiegelOK</p>
+        </div>
+      </div>
+      <p class="tweet-text">
+        Tomorrow with the agency we will run 5 km for charity. Come and give us
+        your support! <a href="#" class="link">#Daydream5K</a>
+      </p>
+      <p class="tweet-time">
+        2 hours ago
+      </p>
+    </div>
+    <div class="body-item">
+      <div class="tweet-title">
+        <img src="assets/images/twitter-avatar.png" alt="Tweeter avatar" />
+        <div class="author">
+          <p class="name">Space Cowboy</p>
+          <p class="tweet-name">@james_spiegelOK</p>
+        </div>
+      </div>
+      <p class="tweet-text">
+        Check out the new website of “The Bebop Bar”!
+        <a href="#" class="link">bytle/thbp53f</a>
+      </p>
+      <p class="tweet-time">
+        16 hours ago
+      </p>
+    </div>
+    <div class="body-item">
+      <div class="tweet-title">
+        <img src="assets/images/twitter-avatar.png" alt="Tweeter avatar" />
+        <div class="author">
+          <p class="name">Space Cowboy</p>
+          <p class="tweet-name">@james_spiegelOK</p>
+        </div>
+      </div>
+      <p class="tweet-text">
+        The Sunday is the annual agency camping trip and I still haven’t got a
+        tent <a href="#" class="link">#TheWild #Indoors</a>
+      </p>
+      <p class="tweet-time">
+        Yesterday
+      </p>
+    </div>
+  </div>
+</div>
+<div class="sidebar-item videos">
+  <div class="sidebar-item-header">
+    Latest videos
+    <span>
+      <i class="fas fa-ellipsis-h"></i>
+    </span>
+  </div>
+  <div class="sidebar-item-body">
+    <div class="body-item">
+      <a href="#">
+        <img
+          src="assets/images/video-images/video-image-1.jpg"
+          alt="Video image"
+        />
+        <div class="play-button">
+          <i class="fas fa-play play"></i>
+        </div>
+        <div class="video-description">
+          <div class="video-title">System of a Revenge - Hypnotize...</div>
+          <div class="duration">3:25</div>
+        </div>
+      </a>
+    </div>
+    <div class="body-item">
+      <a href="#">
+        <img
+          src="assets/images/video-images/video-image-2.jpg"
+          alt="Video image"
+        />
+        <div class="play-button">
+          <i class="fas fa-play play"></i>
+        </div>
+        <div class="video-description">
+          <div class="video-title">Green Goo - Live at Dan's Arena</div>
+          <div class="duration">5:48</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

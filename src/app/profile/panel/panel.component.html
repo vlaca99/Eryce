@@ -1,0 +1,79 @@
+<div class="panel">
+  <div class="panel-header">
+    <div class="user-info">
+      <img src="assets/images/profile-image.jpg" alt="User image" />
+      <h4 class="username">
+        {{userName}}
+        <span class="time">{{time}}</span>
+      </h4>
+    </div>
+    <div class="more">
+      <i class="fas fa-ellipsis-h"></i>
+      <div class="more-dropdown">
+        <ul>
+          <li><a href="#" class="more-dropdown-link">Edit Post</a></li>
+          <li><a href="#" class="more-dropdown-link">Delete Post</a></li>
+          <li>
+            <a href="#" class="more-dropdown-link">Turn On Notifications</a>
+          </li>
+          <li>
+            <a href="#" class="more-dropdown-link">Select as Featured</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <ng-content></ng-content>
+  </div>
+  <div class="panel-buttons">
+    <a href="#" class="panel-button trophy active">
+      <i class="fas fa-trophy"></i>
+    </a>
+    <a href="#" class="panel-button">
+      <i class="far fa-heart like-icon"></i>
+    </a>
+    <a href="#" class="panel-button">
+      <i class="far fa-comment-alt"></i>
+    </a>
+    <a href="#" class="panel-button">
+      <i class="fas fa-exchange-alt"></i>
+    </a>
+  </div>
+  <div class="panel-footer">
+    <div class="likes">
+      <i class="far fa-heart like-icon"></i>
+      <span class="ammount">8</span>
+    </div>
+    <ul class="likes-list">
+      <li>
+        <img src="assets/images/avatar-image-1.jpg" alt="Avatar image" />
+      </li>
+      <li>
+        <img src="assets/images/avatar-image-2.jpg" alt="Avatar image" />
+      </li>
+      <li>
+        <img src="assets/images/avatar-image-3.jpg" alt="Avatar image" />
+      </li>
+      <li>
+        <img src="assets/images/avatar-image-4.jpg" alt="Avatar image" />
+      </li>
+      <li>
+        <img src="assets/images/avatar-image-5.jpg" alt="Avatar image" />
+      </li>
+    </ul>
+    <div class="people-likes">
+      <a href="#">Jenny</a>, <a href="#">Robert</a> and 6 more liked this
+    </div>
+    <div class="comments-and-replys">
+      <div class="comments">
+        <i class="far fa-comment-alt"></i>
+        <span class="ammount">17</span>
+      </div>
+      <div class="replys">
+        <i class="fas fa-exchange-alt"></i>
+        <span class="ammount">24</span>
+      </div>
+    </div>
+  </div>
+</div>
